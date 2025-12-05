@@ -1,0 +1,20 @@
+Comprimir videos
+
+ffmpeg -hwaccel cuda -i "input.mkv" ^
+-vf "scale=-1:720:force_original_aspect_ratio=decrease,setsar=1" ^
+-c:v h264_nvenc -preset slow -rc vbr -cq 27 -b:v 0 ^
+-map 0 -c:a copy -c:s copy "Comprimidas\archivo.mkv"
+
+
+
+
+entre mayor el cq mas la compresion
+ffmpeg -hwaccel cuda -i ReAnimator.mkv -vf scale=-1:720 -c:v h264_nvenc -preset slow -rc vbr -cq 27 -b:v 0 -map 0 -c:a copy -c:s copy ReAnimator_720p.mkv
+
+X-Men 2014 Dias del Futuro Pasado
+ffmpeg -hwaccel cuda -i "X-Men 2014 Dias del Futuro Pasado.mkv" -vf scale=-1:720 -c:v h264_nvenc -preset slow -rc vbr -cq 27 -b:v 0 -map 0 -c:a copy -c:s copy "X-Men 2014 Dias del Futuro Pasado.mkv_720p.mkv"
+
+Baahubali 2 La conclusión.mkv
+X-Men 2013 Wolverine Inmortal.mkv	
+El Plan Perfecto 2006 Inside Man.mkv
+La buena hamburguesa 1997.mkv
