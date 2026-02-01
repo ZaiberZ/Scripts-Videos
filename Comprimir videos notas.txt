@@ -18,3 +18,17 @@ Baahubali 2 La conclusión.mkv
 X-Men 2013 Wolverine Inmortal.mkv	
 El Plan Perfecto 2006 Inside Man.mkv
 La buena hamburguesa 1997.mkv
+
+
+
+ffprobe -hide_banner -show_streams -show_format "Primitive War (2025) 1080p.mkv"
+ffprobe -hide_banner -show_streams -show_format "Primitive War (2025).mkv"
+
+
+ffmpeg -i "Primitive War (2025).mkv" -map 0 -c copy ^
+  -metadata title="Primitive War (2025)" ^
+  -metadata:s:a:0 language=eng ^
+  -metadata:s:s:0 language=eng ^
+  -metadata:s:s:1 language=spa ^
+  -map_metadata -1 ^
+  "Primitive War (2025)-fixed.mkv"
